@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# Dev Assignment
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Assumptions
+
+- No backend is needed since we are using the DummyJsonAPI, this means we are restricted to their available
+  endpoints. For that same reason we can only query the products endpoint by one criteria in this case the *FREE TEXT*
+  search has priority over the *CATEGORY FILTER* 
+
+## Installation
+
+As usual just run `npm install` and once that is done you are able to use the app by
+by running the ***npm start*** (bellow) script as usual.
 
 ## Available Scripts
 
@@ -14,11 +25,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -29,42 +35,22 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `npm run storybook`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This will start the storybook workshop where you can fiddle and try out some components without having to run 
+the main project 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Notes
+- To trigger the search you need to press the ENTER key otherwise it will not work.
+- There are some basic cypress tests (just to make sure the components mount correctly in the browser), this can
+also be achieved by using the storybook workshop.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## TODO
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Because of the way MUI table works and the lack of time I was unable to implement the scroll detect for the infinite
+scroll table. Given more time I would implement a table component from scratch or use a different component like MIU-X
+Data Grid.
+- Make the free text search be automatic after the user has done typing or as it types the texts
+- Due to lack of time (ran out trying to fix some issues) there are no unit tests, if I had more time I would have
+added unit tests for the ***DropdownFilter mapListToRequiredStructure*** function to make sure it always returns
+the same output
